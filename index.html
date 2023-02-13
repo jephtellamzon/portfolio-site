@@ -108,7 +108,7 @@
           <div class="row">
             <div class="col-lg-6 align-self-center">
               <h1 class="fw-bold pt-5 main-title">Hi, I'm Jephte</h1>
-              <p class="fw-bold fs-5" id="type-animate"></p>
+              <p class="fw-bold fs-3" id="type-animate"></p>
               <p class="fw-bold pb-3">
                 <svg
                   viewBox="0 0 48 48"
@@ -217,10 +217,43 @@
     <!-- type animate -->
     <script>
       new TypeIt("#type-animate", {
-        strings: "This is a simple string.",
         speed: 50,
+        startDelay: 900,
         waitUntilVisible: true,
-      }).go();
+      })
+        .type("Web Developer", { delay: 200 })
+        .pause(200)
+        .delete(10, { delay: 400 })
+        .pause(200)
+        .type(" Administrator", { delay: 200 })
+        .pause(200)
+        .delete(17, { delay: 400 })
+        .type("Computer Enthusiasts", { delay: 200 })
+        .pause(200)
+
+        // .move(-8, { delay: 100 })
+        // .type("s", { delay: 400 })
+        // .move(null, { to: "START", instant: true, delay: 300 })
+        // .move(1, { delay: 200 })
+        // .delete(1)
+        // .type("T", { delay: 225 })
+        // .pause(200)
+        // .move(2, { instant: true })
+        // .pause(200)
+        // .move(5, { instant: true })
+        // .move(5, { delay: 200 })
+        // .type("a", { delay: 350 })
+        // .move(null, { to: "END" })
+        // .type("le typing utlity")
+        // .move(-4, { delay: 150 })
+        // .type("i")
+        // .move(null, { to: "END" })
+        // .type(' on the <span class="place">internet</span>', { delay: 400 })
+        // .delete(".place", { delay: 800, instant: true })
+        // .type('<em><strong class="font-semibold">planet.</strong></em>', {
+        //   speed: 100,
+        // })
+        .go();
     </script>
     <!-- boostrap.js -->
     <script
