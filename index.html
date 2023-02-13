@@ -27,6 +27,7 @@
     <!-- typeit -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <style>
+
       h1 {
         font-family: "Roboto", sans-serif;
       }
@@ -34,23 +35,20 @@
         font-size: 50px;
       }
       .bl-bg {
-        background-color: #1f2125;
+        background-color: #1c1c26;
       }
       p,
       b {
         font-family: "Nunito", sans-serif;
       }
-      .bg-footer {
-        background-color: #f0f0f0;
-      }
-      body {
+      body, main {
         background-color: #eeeeee;
       }
       #navbar-name {
         font-family: "Nunito", sans-serif;
       }
       .bg-about {
-        background-color: #f0f0f0;
+        background-color: #e8dfd6;
       }
     </style>
   </head>
@@ -105,7 +103,7 @@
       </div>
     </nav>
     <!-- Banner -->
-    <header class="bl-bg d-flex h-100">
+    <header class="bl-bg d-flex min-vh-100 d-inline-block">
       <div class="container-fluid text-white text-start mb-5">
         <div class="container">
           <div class="row">
@@ -217,11 +215,11 @@
         </div>
       </div>
     </header>
-    <section id="about" class="bg-about mt-5">
-      <div class="container my-5">
-        <h2 class="text-center fs-1">About</h2>
+    <section id="about" class="bg-about pt-3">
+      <div class="container my-5 bg-about">
+        <h2 class="text-center fs-1 bg-about">About</h2>
       </div>
-      <div class="container mb-5 d-flex bg-feat">
+      <div class="container mb-5 pb-5 d-flex bg-feat">
         <div class="row text-center">
           <div
             class="col-lg-6"
