@@ -228,6 +228,7 @@
         speed: 50,
         startDelay: 900,
         waitUntilVisible: true,
+        loop: true,
       })
         .type("Web Developer", { delay: 200 })
         .pause(200)
@@ -236,8 +237,9 @@
         .type(" Administrator", { delay: 200 })
         .pause(200)
         .delete(17, { delay: 400 })
-        .type("Computer Enthusiasts", { delay: 200 })
+        .type('<span class="place">Add me on LinkedIn</span>', { delay: 200 })
         .pause(200)
+        .delete(".place", { delay: 500})
 
         // .move(-8, { delay: 100 })
         // .type("s", { delay: 400 })
