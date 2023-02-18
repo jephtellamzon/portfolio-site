@@ -66,6 +66,28 @@
       .bg-educ {
         background-color: #c5e8da;
       }
+      .home-5-bg {
+        background: #1c1c26;
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .section {
+        position: relative;
+      }
+
+      .home-5-bg #particles-js {
+        z-index: 1 !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .home-5-content {
+        z-index: 1;
+        position: relative;
+      }
     </style>
   </head>
   <body>
@@ -119,11 +141,13 @@
       </div>
     </nav>
     <!-- Banner -->
-    <header class="bl-bg d-flex min-vh-100 d-inline-block">
+    <header class="d-flex min-vh-100 section home-5-bg">
+      <div id="particles-js"></div>
+      <div class="bg-overlay"></div>
       <div class="container-fluid text-white text-start mb-5">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 align-self-center">
+            <div class="col-lg-6 align-self-center home-5-content">
               <h1 class="fw-bold pt-5 main-title">Hi, I'm Jephte</h1>
               <p class="fw-bold fs-3" id="type-animate"></p>
               <p class="fw-bold pb-3">
@@ -220,7 +244,7 @@
               </p>
               <br />
             </div>
-            <div class="col-lg-6 text-center mt-3 pt-5">
+            <div class="col-lg-6 text-center mt-3 pt-5 home-5-content">
               <img
                 src="https://github.com/jephtellamzon/sam-finals-assets/blob/main/header-alt.png?raw=true"
                 alt=""
@@ -735,5 +759,91 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 50, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector(".js-count-particles");
+      update = function () {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
   </body>
 </html>
